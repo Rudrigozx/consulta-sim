@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_022204) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_034655) do
   create_table "agendas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "Medico_id", null: false
+    t.index ["Medico_id"], name: "index_agendas_on_Medico_id"
   end
 
   create_table "consulta", force: :cascade do |t|
@@ -21,6 +23,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_022204) do
     t.string "medico"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "agenda_id", null: false
+    t.integer "paciente_id", null: false
+    t.index ["agenda_id"], name: "index_consulta_on_agenda_id"
+    t.index ["paciente_id"], name: "index_consulta_on_paciente_id"
   end
 
   create_table "consultorios", force: :cascade do |t|
@@ -36,6 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_022204) do
     t.text "complemento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "paciente_id", null: false
+    t.index ["paciente_id"], name: "index_enderecos_on_paciente_id"
   end
 
   create_table "medicos", force: :cascade do |t|
@@ -46,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_022204) do
     t.string "crm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "consultorio_id", null: false
+    t.index ["consultorio_id"], name: "index_medicos_on_consultorio_id"
   end
 
   create_table "pacientes", force: :cascade do |t|
@@ -55,6 +65,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_022204) do
     t.datetime "dataNascimento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "consultorio_id", null: false
+    t.index ["consultorio_id"], name: "index_pacientes_on_consultorio_id"
   end
 
+  add_foreign_key "agendas", "Medicos"
+  add_foreign_key "consulta", "agendas"
+  add_foreign_key "consulta", "pacientes"
+  add_foreign_key "enderecos", "pacientes"
+  add_foreign_key "medicos", "consultorios"
+  add_foreign_key "pacientes", "consultorios"
 end
