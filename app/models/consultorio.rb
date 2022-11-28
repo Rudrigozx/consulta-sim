@@ -1,0 +1,2 @@
+class Consultorio < ApplicationRecord
+end
