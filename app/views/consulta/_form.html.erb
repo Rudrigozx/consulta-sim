@@ -12,13 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :data_hora, style: "display: block" %>
-    <%= form.datetime_field :data_hora %>
+    <%= form.label :paciente, style: "display: block" %>
+    <%= form.text_field :paciente %>
   </div>
 
   <div>
     <%= form.label :medico, style: "display: block" %>
     <%= form.text_field :medico %>
+  </div>
+
+  <div>
+    <%= form.label :data_hora, style: "display: block" %>
+    <%= form.datetime_field :data_hora %>
   </div>
 
   <div>

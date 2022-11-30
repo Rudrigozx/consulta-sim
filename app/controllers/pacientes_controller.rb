@@ -3,7 +3,7 @@ class PacientesController < ApplicationController
 
   # GET /pacientes or /pacientes.json
   def index
-    @pacientes = Paciente.all
+    @pacientes = Paciente.includes(:endereco)
   end
 
   # GET /pacientes/1 or /pacientes/1.json
@@ -13,7 +13,9 @@ class PacientesController < ApplicationController
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
+
   end
+
 
   # GET /pacientes/1/edit
   def edit
@@ -65,6 +67,6 @@ class PacientesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def paciente_params
-      params.require(:paciente).permit(:nome, :cpf, :email, :dataNascimento)
+      params.require(:paciente).permit(:nome, :cpf, :email, :data_de_nascimento)
     end
 end

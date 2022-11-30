@@ -15,7 +15,7 @@ class PacientesTest < ApplicationSystemTestCase
     click_on "New paciente"
 
     fill_in "Cpf", with: @paciente.cpf
-    fill_in "Datanascimento", with: @paciente.dataNascimento
+    fill_in "Data de nascimento", with: @paciente.data_de_nascimento
     fill_in "Email", with: @paciente.email
     fill_in "Nome", with: @paciente.nome
     click_on "Create Paciente"
@@ -29,7 +29,7 @@ class PacientesTest < ApplicationSystemTestCase
     click_on "Edit this paciente", match: :first
 
     fill_in "Cpf", with: @paciente.cpf
-    fill_in "Datanascimento", with: @paciente.dataNascimento
+    fill_in "Data de nascimento", with: @paciente.data_de_nascimento
     fill_in "Email", with: @paciente.email
     fill_in "Nome", with: @paciente.nome
     click_on "Update Paciente"

@@ -1,10 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @paciente %>
+<h2>Endereço</h2>
+<%= render @paciente.enderecos %>
 
+
+<h2>Adicione o Endereço</h2>
+
+
+<%= form_with model: [@paciente, @paciente.enderecos.build] do |form|%>
+    <li>
+      <%= form.label :cep%>
+      <%= form.text_field :cep %>
+
+      <%= form.label :cidade%>
+      <%= form.text_field :cidade %>
+
+      <%= form.label :bairro %>
+      <%= form.text_field :bairro %>
+
+      <%= form.label :logradouro%>
+      <%= form.text_field :cep %>
+
+      <%= form.label :complemento %>
+      <%= form.text_field :cep %>
+    </li>
+    <%= form.submit %>
+  <% end %>
 <div>
   <%= link_to "Edit this paciente", edit_paciente_path(@paciente) %> |
   <%= link_to "Back to pacientes", pacientes_path %>
 
   <%= button_to "Destroy this paciente", @paciente, method: :delete %>
+  <%= link_to "Back to Menu", menus_path %>
 </div>

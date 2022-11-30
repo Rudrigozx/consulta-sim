@@ -6,9 +6,11 @@
   <% @pacientes.each do |paciente| %>
     <%= render paciente %>
     <p>
-      <%= link_to "Show this paciente", paciente %>
+      <%= link_to "Show this paciente", paciente %><br>
+      ------------------------------------------------
     </p>
   <% end %>
 </div>
 
-<%= link_to "New paciente", new_paciente_path %>
+<%= link_to "New paciente", new_paciente_path %><br>
+<%= link_to "Back to Menu", menus_path %>

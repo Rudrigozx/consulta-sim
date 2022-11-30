@@ -16,6 +16,7 @@ class ConsultaTest < ApplicationSystemTestCase
 
     fill_in "Data hora", with: @consultum.data_hora
     fill_in "Medico", with: @consultum.medico
+    fill_in "Paciente", with: @consultum.paciente
     click_on "Create Consultum"
 
     assert_text "Consultum was successfully created"
@@ -28,6 +29,7 @@ class ConsultaTest < ApplicationSystemTestCase
 
     fill_in "Data hora", with: @consultum.data_hora
     fill_in "Medico", with: @consultum.medico
+    fill_in "Paciente", with: @consultum.paciente
     click_on "Update Consultum"
 
     assert_text "Consultum was successfully updated"

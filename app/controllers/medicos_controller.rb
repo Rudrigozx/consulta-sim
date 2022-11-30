@@ -25,7 +25,7 @@ class MedicosController < ApplicationController
 
     respond_to do |format|
       if @medico.save
-        format.html { redirect_to medico_url(@medico), notice: "Medico was successfully created." }
+        format.html { redirect_to medico_url(@medico), notice: "medico was successfully created." }
         format.json { render :show, status: :created, location: @medico }
       else
         format.html { render :new, status: :unprocessable_entity }
