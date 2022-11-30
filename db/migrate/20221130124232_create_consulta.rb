@@ -1,7 +1,6 @@
 class CreateConsulta < ActiveRecord::Migration[7.0]
   def change
     create_table :consulta do |t|
-      t.string :paciente
       t.string :medico
       t.datetime :data_hora
 

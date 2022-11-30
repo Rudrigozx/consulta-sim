@@ -3,6 +3,7 @@
 <%= render @paciente %>
 <h2>Endereço</h2>
 <%= render @paciente.enderecos %>
+--------------------------------------
 
 <h2>Adicione um Endereço</h2>
 <%= form_with model: [@paciente, @paciente.enderecos.build] do |form|%>
@@ -34,6 +35,29 @@
 
   <div>
     <%= form.submit %>
+  </div>
+
+<% end %>
+<h2>Consultas</h2>
+<%= render @paciente.consultum %>
+--------------------------------------
+
+<h2>Adicione uma  Consulta</h2>
+<%= form_with model: [@paciente, @paciente.consultum.build] do |form2|%>
+
+
+  <p>
+    <%= form2.label :medico %><br>
+    <%= form2.text_field :medico %>
+  </p>
+
+  <p>
+    <%= form2.label :data_hora %><br>
+    <%= form2.datetime_field :data_hora %>
+  </p>
+
+  <div>
+    <%= form2.submit %>
   </div>
 
 <% end %>

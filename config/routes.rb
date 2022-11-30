@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+
   resources :pacientes do
-    resources :enderecos
+      resources :enderecos
+      resources :consulta
   end
   resources :menus
-  resources :consulta
   resources :medicos
 
     

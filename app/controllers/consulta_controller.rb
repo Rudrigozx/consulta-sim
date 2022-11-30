@@ -21,17 +21,9 @@ class ConsultaController < ApplicationController
 
   # POST /consulta or /consulta.json
   def create
-    @consultum = Consultum.new(consultum_params)
-
-    respond_to do |format|
-      if @consultum.save
-        format.html { redirect_to consultum_url(@consultum), notice: "Consultum was successfully created." }
-        format.json { render :show, status: :created, location: @consultum }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @consultum.errors, status: :unprocessable_entity }
-      end
-    end
+    @paciente = Paciente.find(params[:paciente_id])
+    @consultum = @paciente.consultum.create(consultum_params)
+    redirect_to paciente_path(@paciente)
   end
 
   # PATCH/PUT /consulta/1 or /consulta/1.json
@@ -65,6 +57,6 @@ class ConsultaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def consultum_params
-      params.require(:consultum).permit(:paciente, :medico, :data_hora)
+      params.require(:consultum).permit(:medico, :data_hora)
     end
 end

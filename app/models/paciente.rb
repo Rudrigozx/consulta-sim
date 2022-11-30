@@ -4,6 +4,7 @@ class Paciente < ApplicationRecord
   has_many :enderecos, :dependent => :destroy
 
 
+
   validates :nome, length: { minimum: 4 }
   validates :nome, presence: true
 

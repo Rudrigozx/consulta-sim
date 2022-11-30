@@ -17,7 +17,7 @@ class ConsultaControllerTest < ActionDispatch::IntegrationTest
 
   test "should create consultum" do
     assert_difference("Consultum.count") do
-      post consulta_url, params: { consultum: { data_hora: @consultum.data_hora, medico: @consultum.medico, paciente: @consultum.paciente } }
+      post consulta_url, params: { consultum: { data_hora: @consultum.data_hora, medico: @consultum.medico } }
     end
 
     assert_redirected_to consultum_url(Consultum.last)
@@ -34,7 +34,7 @@ class ConsultaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update consultum" do
-    patch consultum_url(@consultum), params: { consultum: { data_hora: @consultum.data_hora, medico: @consultum.medico, paciente: @consultum.paciente } }
+    patch consultum_url(@consultum), params: { consultum: { data_hora: @consultum.data_hora, medico: @consultum.medico } }
     assert_redirected_to consultum_url(@consultum)
   end
 

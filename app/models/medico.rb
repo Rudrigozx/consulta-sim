@@ -1,5 +1,4 @@
 class Medico < ApplicationRecord
-  has_many :consultum, :dependent => :destroy
 
   validates :nome, length: { minimum: 4 }
   validates :nome, presence: true
