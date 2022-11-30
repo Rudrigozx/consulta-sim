@@ -21,7 +21,7 @@ class EnderecosController < ApplicationController
 
   # POST /enderecos or /enderecos.json
   def create
-    @paciente =Paciente.find(params[:paciente_id])
+    @paciente = Paciente.find(params[:paciente_id])
     @endereco = @paciente.enderecos.create(endereco_params)
     redirect_to paciente_path(@paciente)
   end
@@ -57,7 +57,6 @@ class EnderecosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def endereco_params
-      params.require(:endereco).permit(:cep, :cidade, :bairro, :logradouro, :complemento)
-
+      params.require(:endereco).permit(:cep, :cidade, :bairro, :logradouro, :complemento, :paciente_id)
     end
 end

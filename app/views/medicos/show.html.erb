@@ -1,27 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @medico %>
-<p>
-  <strong> Consultas:</strong>
-<table>
-  <thead>
-  <tr>
-    <th>Data</th>
-    <th>Horario</th>
-    <th>Medico</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @medico.consultum.each do |consultum| %>
-    <tr>
-      <td><%= consultum.data %> </td>
-      <td><%= consultum.horario %></td>
-      <td><%= consultum.paciente.nomeCompleto %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-</p>
+
+
 
 <div>
   <%= link_to "Edit this medico", edit_medico_path(@medico) %> |

@@ -4,10 +4,10 @@ one:
   nome: MyString
   cpf: MyString
   email: MyString
-  data_de_nascimento: 2022-11-30 02:26:54
+  data_de_nascimento: 2022-11-30
 
 two:
   nome: MyString
   cpf: MyString
   email: MyString
-  data_de_nascimento: 2022-11-30 02:26:54
+  data_de_nascimento: 2022-11-30

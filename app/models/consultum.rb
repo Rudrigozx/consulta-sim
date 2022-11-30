@@ -1,6 +1,9 @@
 class Consultum < ApplicationRecord
-  belongs_to :agenda
   belongs_to :paciente
+  belongs_to :Medico
+
+  validates_associated :Medico
+  validates_associated :Paciente
 
   validates :medico, length: { minimum: 4 }
   validates :medico, presence: true
@@ -12,5 +15,11 @@ class Consultum < ApplicationRecord
 
   #validates :data_hora,
   validates :data_hora, presence: true
-  #validates :data_hora,
+  validate :validarData
+
+  def validarData
+    if data_hora.present? && data_hora < Date.today
+      errors.add(:dataNascimento, "Data invalida")
+    end
+  end
 end

@@ -4,33 +4,42 @@
 <h2>Endereço</h2>
 <%= render @paciente.enderecos %>
 
-
-<h2>Adicione o Endereço</h2>
-
-
+<h2>Adicione um Endereço</h2>
 <%= form_with model: [@paciente, @paciente.enderecos.build] do |form|%>
-    <li>
-      <%= form.label :cep%>
-      <%= form.text_field :cep %>
 
-      <%= form.label :cidade%>
-      <%= form.text_field :cidade %>
+  <p>
+    <%= form.label :cep %><br>
+    <%= form.text_field :cep %>
+  </p>
 
-      <%= form.label :bairro %>
-      <%= form.text_field :bairro %>
+  <p>
+    <%= form.label :cidade %><br>
+    <%= form.text_field :cidade %>
+  </p>
 
-      <%= form.label :logradouro%>
-      <%= form.text_field :cep %>
+  <p>
+    <%= form.label :bairro %><br>
+    <%= form.text_field :bairro %>
+  </p>
 
-      <%= form.label :complemento %>
-      <%= form.text_field :cep %>
-    </li>
+  <p>
+    <%= form.label :logradouro %><br>
+    <%= form.text_field :logradouro %>
+  </p>
+
+  <p>
+    <%= form.label :complemento %><br>
+    <%= form.text_field :complemento %>
+  </p>
+
+  <div>
     <%= form.submit %>
-  <% end %>
+  </div>
+
+<% end %>
 <div>
   <%= link_to "Edit this paciente", edit_paciente_path(@paciente) %> |
   <%= link_to "Back to pacientes", pacientes_path %>
 
   <%= button_to "Destroy this paciente", @paciente, method: :delete %>
-  <%= link_to "Back to Menu", menus_path %>
 </div>

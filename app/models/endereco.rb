@@ -22,3 +22,4 @@ class Endereco < ApplicationRecord
   validates :complemento, presence: true
   validates :complemento, length: { in: 4..100 }
 end
+

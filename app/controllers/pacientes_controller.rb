@@ -3,7 +3,7 @@ class PacientesController < ApplicationController
 
   # GET /pacientes or /pacientes.json
   def index
-    @pacientes = Paciente.includes(:endereco)
+    @pacientes = Paciente.all
   end
 
   # GET /pacientes/1 or /pacientes/1.json
@@ -13,9 +13,7 @@ class PacientesController < ApplicationController
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
-
   end
-
 
   # GET /pacientes/1/edit
   def edit
