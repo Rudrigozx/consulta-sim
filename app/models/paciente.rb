@@ -1,7 +1,8 @@
 class Paciente < ApplicationRecord
 
-  has_many :consultum, :dependent => :destroy
-  has_many :enderecos, :dependent => :destroy
+  has_many :consultums, dependent: :destroy
+  has_many :medicos, through: :consultums
+  has_one :endereco, :dependent => :destroy
 
 
 

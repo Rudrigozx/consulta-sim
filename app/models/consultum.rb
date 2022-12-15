@@ -1,5 +1,6 @@
 class Consultum < ApplicationRecord
   belongs_to :paciente
+  belongs_to :Medico
 
   validates :medico, length: { minimum: 4 }, presence: true, format: { with: /\A[a-zA-Z]+\z/}
 
