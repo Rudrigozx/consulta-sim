@@ -5,7 +5,8 @@ class Paciente < ApplicationRecord
     validates :nome, length: { minimum: 4 } ,presence: true
     validates :cpf, length: { is: 11 } ,presence: true, numericality: { only_integer: true }, uniqueness: true
     validates :email, length: { minimum: 11 }, presence: true, uniqueness: true
-    validates :data_de_nascimento, presence: true, validarData:
+    validates :data_de_nascimento, presence: true
+    validate :validarData
 
   def validarData
     if data_de_nascimento.present? && data_de_nascimento > Date.today
