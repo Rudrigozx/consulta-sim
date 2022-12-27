@@ -13,7 +13,12 @@
 
   <div>
     <%= form.label :medico, style: "display: block" %>
-    <%= form.text_field :medico %>
+    <%= form.collection_select(:Medico_id, Medico.all, :id, :nome , include_blank: "Selecione um Medico") %>
+  </div>
+
+  <div>
+    <%= form.label :paciente, style: "display: block" %>
+    <%= form.collection_select(:Paciente_id, Paciente.all, :id, :nome, include_blank: "Selecione um paciente") %>
   </div>
 
   <div>
