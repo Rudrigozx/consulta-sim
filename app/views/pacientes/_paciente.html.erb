@@ -1,4 +1,6 @@
 <div id="<%= dom_id paciente %>">
+  <h2>Dados Pessoais</h2>
+  <ul>
   <p>
     <strong>Nome:</strong>
     <%= paciente.nome %>
@@ -18,5 +20,32 @@
     <strong>Data de nascimento:</strong>
     <%= paciente.data_de_nascimento %>
   </p>
+  </ul>
+<h2>Endereço</h2>
+  <ul>
+  <p>
+    <strong>Cep:</strong>
+    <%= paciente.endereco.cep %>
+  </p>
 
-</div>
+  <p>
+    <strong>Cidade:</strong>
+    <%= paciente.endereco.cidade %>
+  </p>
+
+  <p>
+    <strong>Bairro:</strong>
+    <%= paciente.endereco.bairro %>
+  </p>
+
+  <p>
+    <strong>Logradouro:</strong>
+    <%= paciente.endereco.logradouro %>
+  </p>
+
+  <p>
+    <strong>Complemento:</strong>
+    <%= paciente.endereco.complemento %><br>
+  </p>
+  </ul>
+  </div>

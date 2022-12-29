@@ -30,7 +30,35 @@
     <%= form.label :data_de_nascimento, style: "display: block" %>
     <%= form.date_field :data_de_nascimento %>
   </div>
+  <div>
+    <h2>Endereço</h2>
+    <%= form.fields_for :endereco do |endereco_form| %>
+      <p>
+        <%= endereco_form.label :cep %><br>
+        <%= endereco_form.text_field :cep %>
+      </p>
 
+      <p>
+        <%= endereco_form.label :cidade %><br>
+        <%= endereco_form.text_field :cidade %>
+      </p>
+
+      <p>
+        <%=endereco_form.label :bairro %><br>
+        <%= endereco_form.text_field :bairro %>
+      </p>
+
+      <p>
+        <%= endereco_form.label :logradouro %><br>
+        <%= endereco_form.text_field :logradouro %>
+      </p>
+
+      <p>
+        <%= endereco_form.label :complemento %><br>
+        <%= endereco_form.text_field :complemento %>
+      </p>
+    <% end %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :enderecos
 
   resources :menu
   resources :pacientes do
-      resources :enderecos
-  end
+      end
   resources :consulta
   resources :medicos
 
