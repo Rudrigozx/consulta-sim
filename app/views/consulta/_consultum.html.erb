@@ -1,11 +1,16 @@
 <div id="<%= dom_id consultum %>">
   <p>
     <strong>Medico:</strong>
-    <%= consultum.medico %>
+    <%= consultum.medico.nome %>
   </p>
 
   <p>
-    <strong>Data hora:</strong>
+    <strong>Especialidade:</strong>
+    <%= consultum.medico.especialidade %>
+  </p>
+
+  <p>
+    <strong>Data e hora:</strong>
     <%= consultum.data_hora %><br>
     -------------------------------
   </p>

@@ -13,6 +13,8 @@ class ConsultaController < ApplicationController
   # GET /consulta/new
   def new
     @consultum = Consultum.new
+    @consultum.build_paciente
+    @consultum.build_medico
 
   end
 
@@ -66,6 +68,6 @@ class ConsultaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def consultum_params
-      params.require(:consultum).permit(:medico, :data_hora)
+      params.require(:consultum).permit(:data_hora, :paciente_id, :medico_id)
     end
 end
