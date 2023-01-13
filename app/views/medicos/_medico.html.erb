@@ -24,4 +24,38 @@
     <%= medico.crm %>
   </p>
 
+  <p>
+    <strong>Consultas:</strong>
+  <div id="consultum">
+    <% medico.consultum.each do |consulta| %>
+      <style>
+        table{
+            width: 500px;
+            border-collapse: collapse;
+
+        }
+        td {
+            border: 1px solid black;
+            padding: 8px;
+
+        }
+      </style>
+      <ul>
+        <table>
+          <tr>
+            <td> Consulta </td>
+            <td> Paciente </td>
+            <td> Data e Hora </td>
+          </tr>
+          <tr>
+            <td><%= consulta.id %></td>
+            <td><%= consulta.paciente.nome %></td>
+            <td><%= consulta.data_hora %></td>
+          </tr>
+        </table>
+      </ul>
+    <% end %>
+  </div>
+  </p>
+
 </div>
